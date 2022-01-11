@@ -36,3 +36,30 @@ class player():
     def set_score(self, points):
         """sets the score by adding the points passed in."""
         self.score += points
+
+def main():
+    new_player = player()
+    play = True
+    print(f"Welcome New Player your current score is {new_player.score}")
+    while play == True:
+        the_dice = dice()
+        the_dice.set_rolls()
+        the_dice.get_rolls()
+        points = 0
+        for die in the_dice:
+            if die == 1:
+                points += 100
+            elif die == 5:
+                points += 50
+        if points == 0:
+            print(f"GAME OVER!  You ended the game with {new_player.score} Points better luck next time.")
+            play = False
+        else:    
+            player.set_score(points)
+            print(f"{new_player.player_name} your score is {new_player.score}")
+            keep_Playing = input("Roll the dice? Y/N")
+            if keep_Playing.upper == "N":
+                play = False
+                print(f"Disgression is the better part of valor.  Your score was {new_player.score}.")
+            else:
+                print("rolling")
