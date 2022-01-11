@@ -55,7 +55,7 @@ def main():
         the_dice.set_rolls()
         the_dice.get_rolls()
         points = 0
-        for num in the_dice:
+        for num in the_dice.rolls:
             if num == 1:
                 points += 100
             elif num == 5:
@@ -64,7 +64,7 @@ def main():
             print(f"GAME OVER!  You ended the game with {new_player.score} Points better luck next time.")
             play = False
         else:    
-            player.set_score(points)
+            new_player.set_score(points)
             print(f"{new_player.player_name} your score is {new_player.score}")
             keep_Playing = input("Roll the dice? Y/N")
             if keep_Playing.upper == "N":
