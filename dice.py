@@ -37,6 +37,15 @@ class player():
         """sets the score by adding the points passed in."""
         self.score += points
 
+class player():
+    def __init__(self) -> None:
+        """sets up a player"""
+        self.player_name = "Player 1"
+        self.score = 0
+    def set_score(self, points):
+        """sets the score by adding the points passed in."""
+        self.score += points
+
 def main():
     new_player = player()
     play = True
@@ -46,10 +55,10 @@ def main():
         the_dice.set_rolls()
         the_dice.get_rolls()
         points = 0
-        for die in the_dice:
-            if die == 1:
+        for num in the_dice:
+            if num == 1:
                 points += 100
-            elif die == 5:
+            elif num == 5:
                 points += 50
         if points == 0:
             print(f"GAME OVER!  You ended the game with {new_player.score} Points better luck next time.")
@@ -63,3 +72,6 @@ def main():
                 print(f"Disgression is the better part of valor.  Your score was {new_player.score}.")
             else:
                 print("rolling")
+#New let's Boogey
+if __name__ == "__main__":
+    main()
